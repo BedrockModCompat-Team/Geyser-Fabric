@@ -27,12 +27,9 @@ dependencies {
     // PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
     // You may need to force-disable transitiveness on them.
 
-    implementation 'org.geysermc:connector:1.4.1-SNAPSHOT'
-    shadow('org.geysermc:connector:1.4.1-SNAPSHOT') {
-        exclude group: 'com.google.guava', module: "guava"
-        exclude group: 'com.google.code.gson', module: "gson"
-        exclude group: 'org.slf4j'
-    }
+    implementation files ('libs/Geyser.jar')
+    //implementation files ('libs/Geyser-common.jar')
+    shadow fileTree(dir: 'libs', include: 'Geyser.jar')
 }
 
 repositories {
