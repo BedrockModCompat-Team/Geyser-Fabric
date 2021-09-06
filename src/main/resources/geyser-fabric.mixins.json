@@ -6,7 +6,7 @@
     "client.IntegratedServerMixin"
   ],
   "server": [
-    "server.MinecraftDedicatedServerMixin"
+    "server.MinecraftServerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

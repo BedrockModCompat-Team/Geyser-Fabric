@@ -24,17 +24,19 @@ dependencies {
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-    // PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
-    // You may need to force-disable transitiveness on them.
-
-    implementation files ('libs/Geyser.jar')
-    //implementation files ('libs/Geyser-common.jar')
-    shadow fileTree(dir: 'libs', include: 'Geyser.jar')
+    implementation 'org.geysermc:connector:1.4.1-SNAPSHOT'
+    shadow('org.geysermc:connector:1.4.1-SNAPSHOT') {
+        exclude group: 'com.google.guava', module: "guava"
+        exclude group: 'com.google.code.gson', module: "gson"
+        exclude group: 'org.slf4j'
+    }
 }
 
 repositories {
     mavenLocal()
-
+    maven {
+        url = uri('https://raw.github.com/BedrockModCompat-Team/develop-maven-repo/master')
+    }
     maven {
         url = uri('https://repo.opencollab.dev/maven-releases/')
     }
