@@ -37,9 +37,6 @@ repositories {
     maven {
         url = uri('https://raw.github.com/BedrockModCompat-Team/develop-maven-repo/master')
     }
-    maven {
-        url = uri('https://repo.opencollab.dev/maven-releases/')
-    }
 
     maven {
         url = uri('https://repo.opencollab.dev/maven-snapshots/')
